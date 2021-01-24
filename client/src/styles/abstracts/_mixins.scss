@@ -1,0 +1,19 @@
+@mixin button {
+    min-width: 100px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 0 5px #999;
+
+    &:hover {
+        background-color: pink;
+        cursor: pointer;
+    }
+
+    &.selected {
+        color: rgb(226, 223, 223);
+        background-color: rgb(10, 10, 10);
+    }
+}
