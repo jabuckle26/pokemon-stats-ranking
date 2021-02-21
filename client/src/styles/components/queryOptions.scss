@@ -1,28 +1,28 @@
 .queryOptions {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px;
 }
 
 .container {
-    display:flex;
-    justify-content: space-evenly;
-    max-width: 80vw;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 80vw;
+  flex-wrap: wrap;
 }
 
 .typeButton {
-    @include button;
+  @include button;
 }
 
 .statQuery {
-    @include button;
-    background-color: grey;
+  @include button;
+  background-color: grey;
 }
 
 .runQuery {
-    @include button;
-    background-color: seagreen;
+  @include button;
+  background-color: seagreen !important;
 }

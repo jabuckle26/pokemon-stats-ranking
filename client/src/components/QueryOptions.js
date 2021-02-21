@@ -1,24 +1,13 @@
 import React, { useContext } from "react";
 import { allStats } from "../utils/stats";
 import { allTypes } from "../utils/types";
-import { GlobalContext } from "../context/GlobalState";
 import { QueryButton } from "./QueryButton";
-import axios from "axios";
+import { SearchButton } from "./SearchButton";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const QueryOptions = () => {
-  const { setResults, setIsLoading } = useContext(GlobalContext);
   const [selectedType, setSelectedType] = React.useState("");
   const [selectedStat, setSelectedStat] = React.useState("");
-
-  const handleSearchClick = async () => {
-    setIsLoading(true);
-    const result = await axios.get(
-      `/api/pokemon/statSort?stat=${selectedStat.toLowerCase()}&type=${selectedType}`
-    );
-    console.log("got response");
-    setResults(result.data);
-    setIsLoading(false);
-  };
 
   return (
     <div className="queryOptions">
@@ -47,9 +36,7 @@ export const QueryOptions = () => {
           );
         })}
       </div>
-      <p className="runQuery" onClick={() => handleSearchClick()}>
-        SEARCH
-      </p>
+      <SearchButton selectedType={selectedType} selectedStat={selectedStat} />
     </div>
   );
 };

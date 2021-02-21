@@ -1,7 +1,22 @@
 .resultsDisplay {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px;
+}
+
+thead {
+  position: sticky;
+  background-color: black;
+  color: grey;
+}
+
+th {
+  font-weight: bold;
+  text-align: center !important;
+}
+
+td.stat {
+  text-align: center !important;
 }

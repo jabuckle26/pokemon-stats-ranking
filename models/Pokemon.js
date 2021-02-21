@@ -1,51 +1,53 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const PokemonSchema = new mongoose.Schema({
   id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'id'
+    ref: "id",
   },
   name: {
     type: String,
-    required: true
+    required: true,
+    unique: true,
   },
   natDex: {
     type: String,
-    required: true
+    required: true,
   },
   types: {
     type: [String],
-    required: true
+    required: true,
   },
   stats: {
     hp: {
       type: Number,
-      required: true
+      required: true,
     },
     attack: {
       type: Number,
-      required: true
+      required: true,
     },
     defence: {
       type: Number,
-      required: true
+      required: true,
     },
     specialAttack: {
       type: Number,
-      required: true
+      required: true,
     },
     specialDefence: {
       type: Number,
-      required: true
+      required: true,
     },
     speed: {
       type: Number,
-      required: true
+      required: true,
     },
     total: {
-        type: Number
-    }
+      type: Number,
+      required: true,
+    },
   },
 });
 
-module.exports = Pokemon = mongoose.model('pokemon', PokemonSchema);
+module.exports = Pokemon = mongoose.model("pokemon", PokemonSchema);
