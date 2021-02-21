@@ -12,9 +12,23 @@ thead {
   color: grey;
 }
 
-th {
+th,
+td.name {
   font-weight: bold;
   text-align: center !important;
+}
+
+td.typeHolder {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+td span.type {
+  padding: 5px;
+  border-radius: 12%;
+  min-width: 45%;
+  text-align: center;
+  font-weight: bold;
 }
 
 td.stat {
