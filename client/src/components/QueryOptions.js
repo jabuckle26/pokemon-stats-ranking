@@ -6,19 +6,14 @@ import { QueryButton } from "./QueryButton";
 import axios from "axios";
 
 export const QueryOptions = () => {
-  const {
-    selectedType,
-    selectedStats,
-    setResults,
-    setSelectedStats,
-    setSelectedType,
-    setIsLoading,
-  } = useContext(GlobalContext);
+  const { setResults, setIsLoading } = useContext(GlobalContext);
+  const [selectedType, setSelectedType] = React.useState("");
+  const [selectedStat, setSelectedStat] = React.useState("");
 
   const handleSearchClick = async () => {
     setIsLoading(true);
     const result = await axios.get(
-      `/api/pokemon/statSort?stat=${selectedStats.toLowerCase()}&type=${selectedType}`
+      `/api/pokemon/statSort?stat=${selectedStat.toLowerCase()}&type=${selectedType}`
     );
     console.log("got response");
     setResults(result.data);
@@ -45,9 +40,9 @@ export const QueryOptions = () => {
           return (
             <QueryButton
               param="stat"
-              selectedParam={selectedStats}
+              selectedParam={selectedStat}
               queryParam={stat}
-              queryAction={setSelectedStats}
+              queryAction={setSelectedStat}
             />
           );
         })}

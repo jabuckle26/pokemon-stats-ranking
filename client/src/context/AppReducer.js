@@ -1,24 +1,14 @@
 export default (state, action) => {
   switch (action.type) {
     case "SET_LOADING":
-      state.isLoading = action.payload;
       return {
         ...state,
+        isLoading: action.payload,
       };
     case "SET_RESULTS":
-      state.results = action.payload;
       return {
         ...state,
-      };
-    case "SET_SELECTED_STATS":
-      state.selectedStats = action.payload;
-      return {
-        ...state,
-      };
-    case "SET_SELECTED_TYPE":
-      state.selectedType = action.payload;
-      return {
-        ...state,
+        results: action.payload,
       };
     default:
       return state;
