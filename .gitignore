@@ -2,3 +2,4 @@ node_modules/
 settings.json
 /.vscode
 /client/node_modules/
+/config/default.json
