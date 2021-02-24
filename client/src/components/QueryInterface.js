@@ -8,8 +8,11 @@ export const QueryInterface = () => {
 
   return (
     <>
-      <QueryOptions />
-      {results.length > 0 && <ResultsDisplay results={results} />}
+      {results.length === 0 ? (
+        <QueryOptions />
+      ) : (
+        <ResultsDisplay results={results} />
+      )}
     </>
   );
 };

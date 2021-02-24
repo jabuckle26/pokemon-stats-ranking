@@ -1,6 +1,10 @@
 .appDescriptor {
-  font-weight: bold;
+  text-align: center;
   color: green;
   margin: 10px 30px;
   padding-top: 10vh;
+
+  p {
+    font-weight: bold;
+  }
 }
