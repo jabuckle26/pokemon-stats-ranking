@@ -15,10 +15,12 @@ const getPokemonTypes = (typeArray) => {
   );
 };
 
-export const ResultEntry = ({ props }) => {
-  const { name, types, stats } = props;
+export const ResultEntry = ({ rank, result }) => {
+  const { natDex, name, types, stats } = result;
   return (
     <tr key={name}>
+      <td className="rank">{rank}</td>
+      <td className="natDex">{natDex}</td>
       <td className="name">{name}</td>
       <td className="typeHolder">{getPokemonTypes(types)}</td>
       <td className="stat">{stats.hp}</td>

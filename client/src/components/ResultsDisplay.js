@@ -5,6 +5,8 @@ import Spinner from "react-bootstrap/Spinner";
 import Table from "react-bootstrap/Table";
 
 const tableHeadings = [
+  "Rank",
+  "NatDex #",
   "Pokemon",
   "Type",
   "HP",
@@ -19,6 +21,12 @@ const tableHeadings = [
 export const ResultsDisplay = (props) => {
   const { isLoading } = useContext(GlobalContext);
   const { results } = props;
+
+  const getRank = (result) => {
+    const rank =
+      results.map((singleResult) => singleResult.name).indexOf(result.name) + 1;
+    return rank;
+  };
 
   React.useEffect(() => {
     console.log("In RESULTS DISPLAY use effect");
@@ -38,7 +46,7 @@ export const ResultsDisplay = (props) => {
           </thead>
           <tbody>
             {results.map((result) => {
-              return <ResultEntry props={result} />;
+              return <ResultEntry rank={getRank(result)} result={result} />;
             })}
           </tbody>
         </Table>

@@ -9,7 +9,7 @@
 thead {
   position: sticky;
   background-color: black;
-  color: grey;
+  color: $font-color;
 }
 
 th,
@@ -31,6 +31,12 @@ td span.type {
   font-weight: bold;
 }
 
-td.stat {
+td.stat,
+td.rank,
+td.natDex {
   text-align: center !important;
+}
+
+td {
+  color: $font-color;
 }
