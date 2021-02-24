@@ -8,7 +8,10 @@ export const Banner = () => {
   return (
     <>
       <nav className="navbar fixed-top scrolling-navbar banner">
-        <h2 className="navbar-brand" onClick={() => setResults([])}>
+        <h2
+          className="navbar-brand clickableNav"
+          onClick={() => setResults([])}
+        >
           Pokemon Stat Checker
         </h2>
         <IconContext.Provider
@@ -17,7 +20,7 @@ export const Banner = () => {
             className: "global-class-name",
           }}
         >
-          <div>
+          <div className="clickableNav">
             <GoMarkGithub className="codeIcon" />
           </div>
         </IconContext.Provider>

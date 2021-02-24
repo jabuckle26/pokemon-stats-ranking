@@ -1,4 +1,4 @@
-nav.banner {
+.banner {
   background-color: $banner-bg-color;
   color: $font-color;
   max-height: 8vh;
@@ -6,6 +6,19 @@ nav.banner {
   .codeIcon {
     size: 50px;
   }
+
+  p {
+    font-size: 80%;
+    // text-align: right !important;
+  }
+}
+
+.clickableNav:hover {
+  cursor: pointer !important;
+}
+
+footer {
+  max-height: 5vh !important;
 }
 
 /* Small devices (landscape phones, 544px and up) */
