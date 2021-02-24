@@ -16,8 +16,9 @@ const tableHeadings = [
   "Total",
 ];
 
-export const ResultsDisplay = () => {
-  const { isLoading, results } = useContext(GlobalContext);
+export const ResultsDisplay = (props) => {
+  const { isLoading } = useContext(GlobalContext);
+  const { results } = props;
 
   React.useEffect(() => {
     console.log("In RESULTS DISPLAY use effect");

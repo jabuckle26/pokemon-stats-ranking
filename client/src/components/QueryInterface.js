@@ -1,14 +1,15 @@
-import React from 'react';
-import { QueryOptions } from './QueryOptions';
-import { ResultsDisplay } from './ResultsDisplay';
-
+import React, { useContext } from "react";
+import { QueryOptions } from "./QueryOptions";
+import { ResultsDisplay } from "./ResultsDisplay";
+import { GlobalContext } from "../context/GlobalState";
 
 export const QueryInterface = () => {
-    return (
-        <>
-            <QueryOptions/>
-            <ResultsDisplay/>
-        </>
-    )
-}
+  const { results } = useContext(GlobalContext);
 
+  return (
+    <>
+      <QueryOptions />
+      {results.length > 0 && <ResultsDisplay results={results} />}
+    </>
+  );
+};
