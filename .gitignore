@@ -1,5 +1,7 @@
 node_modules/
 settings.json
+wireframe.png
+config/default.json
 /.vscode
 /client/node_modules/
 /config/default.json
