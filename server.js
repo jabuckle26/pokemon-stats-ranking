@@ -13,7 +13,9 @@ app.get("/", (req, res) => res.send("API running"));
 //Define Routes
 app.use("/api/pokemon", require("./routes/api/pokemon"));
 
-app.use(express.static("client/build"));
-
 const PORT = process.env.PORT || 5000;
+
+if (process.env.NODE_ENV === "PROD") {
+  app.use(express.static("client/build"));
+}
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

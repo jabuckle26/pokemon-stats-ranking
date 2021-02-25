@@ -7,6 +7,9 @@
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "install-client": "cd client && npm install",
     "dev": "concurrently -n 'server,client' -c 'yellow,blue' \"npm run server\" \"npm run client\""
   },
   "author": "James Buckley",
