@@ -5,3 +5,4 @@ config/default.json
 /.vscode
 /client/node_modules/
 /config/default.json
+.env
