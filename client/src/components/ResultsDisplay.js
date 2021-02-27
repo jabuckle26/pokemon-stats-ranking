@@ -37,10 +37,12 @@ export const ResultsDisplay = (props) => {
 
   return (
     <>
-      <DescriptionHeading
-        classDescriptor="appDescriptor"
-        descriptor={descriptionText}
-      />
+      <div className="container">
+        <DescriptionHeading
+          classDescriptor="appDescriptor"
+          descriptor={descriptionText}
+        />
+      </div>
       <div className="resultsDisplay">
         {!isLoading ? (
           <Table responsive striped>

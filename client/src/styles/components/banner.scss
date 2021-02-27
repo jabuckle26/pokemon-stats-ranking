@@ -13,8 +13,11 @@
   }
 }
 
-.clickableNav:hover {
-  cursor: pointer !important;
+.clickableNav {
+  font-weight: bold;
+  :hover {
+    cursor: pointer !important;
+  }
 }
 
 footer {
