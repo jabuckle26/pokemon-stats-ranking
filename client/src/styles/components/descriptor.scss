@@ -1,10 +1,13 @@
-.appDescriptor {
+.appDescriptor,
+.appSelection {
   text-align: center;
   color: $font-color;
-  margin: 10px 30px;
-  padding-top: 10vh;
 
   p {
     font-weight: bold;
   }
+}
+.appDescriptor {
+  margin: 10px 30px;
+  padding-top: 10vh;
 }
