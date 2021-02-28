@@ -14,16 +14,22 @@ export const Banner = () => {
         >
           Pokemon Stat Checker
         </h2>
-        <IconContext.Provider
-          value={{
-            size: "1.8rem",
-            className: "global-class-name",
-          }}
+        <a
+          href="https://github.com/jabuckle26/pokemon-stats-ranking"
+          target="_blank"
+          className="codeIcon"
         >
-          <div className="clickableNav">
-            <GoMarkGithub className="codeIcon" />
-          </div>
-        </IconContext.Provider>
+          <IconContext.Provider
+            value={{
+              size: "1.8rem",
+              className: "global-class-name",
+            }}
+          >
+            <div className="clickableNav">
+              <GoMarkGithub className="codeIcon" />
+            </div>
+          </IconContext.Provider>
+        </a>
       </nav>
     </>
   );
