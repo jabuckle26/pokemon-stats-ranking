@@ -18,7 +18,7 @@ const getPokemonTypes = (typeArray) => {
 export const ResultEntry = ({ rank, result }) => {
   const { natDex, name, types, stats } = result;
   return (
-    <tr key={name}>
+    <tr key={`${rank}-${name}`}>
       <td className="rank">{rank}</td>
       <td className="natDex">{natDex}</td>
       <td className="name">{name}</td>

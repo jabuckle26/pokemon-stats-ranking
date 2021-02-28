@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { allStats } from "../utils/stats";
 import { allTypes } from "../utils/types";
 import { QueryButton } from "./QueryButton";
@@ -23,6 +23,7 @@ export const QueryOptions = () => {
         {allTypes.map((theType) => {
           return (
             <QueryButton
+              key={theType}
               param="type"
               selectedParam={selectedType}
               queryParam={theType}
@@ -37,6 +38,7 @@ export const QueryOptions = () => {
         {allStats.map((stat) => {
           return (
             <QueryButton
+              key={stat}
               param="stat"
               selectedParam={selectedStat}
               queryParam={stat}

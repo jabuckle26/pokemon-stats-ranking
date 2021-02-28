@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { QueryOptions } from "./QueryOptions";
 import { ResultsDisplay } from "./ResultsDisplay";
 import { GlobalContext } from "../context/GlobalState";
-import { DescriptionHeading } from "./DescriptionHeading";
 
 export const MainDisplay = () => {
   const { results } = useContext(GlobalContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [results]);
 
   return (
     <body>

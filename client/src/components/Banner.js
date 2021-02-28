@@ -18,6 +18,7 @@ export const Banner = () => {
           href="https://github.com/jabuckle26/pokemon-stats-ranking"
           target="_blank"
           className="codeIcon"
+          rel="noreferrer"
         >
           <IconContext.Provider
             value={{

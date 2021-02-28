@@ -1,32 +1,39 @@
-import React from 'react'
+import React from "react";
 
 export const QueryButton = (props) => {
-
-    const getButtonStyle = () => {
-        if (props.param === "type") {
-            return `typeButton ${props.queryParam.toLowerCase()} ${props.selectedParam === props.queryParam ? "selected" : "" } `
-        } else if (props.param === "stat") {
-            return `statQuery ${props.selectedParam === props.queryParam ? 'selected' : ''}`;
-        }
-
-        let classNames = props.param === "type" ? `typeButton ${props.queryParam.toLowerCase()}` : `statQuery ${props.queryParam}`;
-        if (props.selectedParam === props.queryParam) {
-            classNames += 'selected';
-        }
-
-        return classNames;
+  const { param, selectedParam, queryParam, queryAction } = props;
+  const getButtonStyle = () => {
+    if (param === "type") {
+      return `typeButton ${queryParam.toLowerCase()} ${
+        selectedParam === queryParam ? "selected" : ""
+      } `;
+    } else if (param === "stat") {
+      return `statQuery ${selectedParam === queryParam ? "selected" : ""}`;
     }
-    
-    const handleButtonClick = (buttonTextContent)  => {
-        const textContentToSet = (props.selectedParam === buttonTextContent) ? "" : buttonTextContent;
-        props.queryAction(textContentToSet);
+
+    let classNames =
+      param === "type"
+        ? `typeButton ${queryParam.toLowerCase()}`
+        : `statQuery ${queryParam}`;
+    if (selectedParam === queryParam) {
+      classNames += "selected";
     }
-    
-    return (
-        <p 
-        className={getButtonStyle()}
-        onClick={(e) => handleButtonClick(e.target.textContent)}>
-            {props.queryParam}
-        </p>
-    )
-}
+
+    return classNames;
+  };
+
+  const handleButtonClick = (buttonTextContent) => {
+    const textContentToSet =
+      selectedParam === buttonTextContent ? "" : buttonTextContent;
+    queryAction(textContentToSet);
+  };
+
+  return (
+    <p
+      className={getButtonStyle()}
+      onClick={(e) => handleButtonClick(e.target.textContent)}
+    >
+      {queryParam}
+    </p>
+  );
+};

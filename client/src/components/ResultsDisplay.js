@@ -55,7 +55,13 @@ export const ResultsDisplay = (props) => {
             </thead>
             <tbody>
               {results.map((result) => {
-                return <ResultEntry rank={getRank(result)} result={result} />;
+                return (
+                  <ResultEntry
+                    key={result.rank}
+                    rank={getRank(result)}
+                    result={result}
+                  />
+                );
               })}
             </tbody>
           </Table>
